@@ -11,12 +11,15 @@ add_library(audio8d SHARED
 )
 
 find_library(log-lib log)
-find_library(oboe oboe)
+
+# Oboe is now a prebuilt library from the AAR — find it via find_library
+# The AAR dependency adds it to the CMake search path automatically
+find_library(oboe-lib oboe)
 
 target_include_directories(audio8d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(audio8d
     ${log-lib}
-    ${oboe}
+    ${oboe-lib}
     android
 )
