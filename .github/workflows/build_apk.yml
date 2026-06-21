@@ -25,18 +25,24 @@ jobs:
           build-tools: 35.0.0
           target: default
           accept-licenses: android-sdk-license
+          ndk-version: 27.0.12077973
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew assembleRelease
+        run: ./gradlew assembleRelease --stacktrace
 
       - name: Verify APK output
-        run: ls -R app/build/outputs/apk/release/
+        run: |
+          echo "Checking APK output directory:"
+          find app/build/outputs -name "*.apk" 2>/dev/null || echo "No APK files found"
+          ls -la app/build/outputs/apk/release/ 2>/dev/null || echo "Release directory not found"
 
       - name: Upload APK
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: apk
           path: app/build/outputs/apk/release/*.apk
+          if-no-files-found: error
