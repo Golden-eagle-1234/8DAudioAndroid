@@ -8,14 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Package module
         run: |
           cd magisk_module
           zip -r ../8d-pirate-magisk.zip * .*
           cd ..
       - name: Upload Magisk module
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: magisk-module
           path: 8d-pirate-magisk.zip
