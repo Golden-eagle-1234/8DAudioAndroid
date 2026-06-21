@@ -1,0 +1,4 @@
+-keep class com.pirate.audio8d.NativeBridge { *; }
+-keep class com.pirate.audio8d.ShizukuHelper { *; }
+-keep class * implements android.os.Parcelable { *; }
+-dontwarn javax.annotation.**

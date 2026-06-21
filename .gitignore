@@ -1,0 +1,27 @@
+# Termux specific
+*.apk
+*.dex
+*.class
+*.so
+*.o
+
+# Build outputs
+bin/
+obj/
+build/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

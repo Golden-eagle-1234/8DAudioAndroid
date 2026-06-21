@@ -1,0 +1,5 @@
+<resources>
+    <style name="Theme._8DPirateProcessor" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@color/pirate_red</item>
+    </style>
+</resources>

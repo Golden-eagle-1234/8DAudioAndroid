@@ -1,0 +1,6 @@
+id=8d_pirate_audio
+name=8D Pirate Audio Injector
+version=v1.0
+versionCode=1
+author=PirateDev
+description=Injects real‑time 8D orbiting DSP into the audio pipeline using Zygisk.

@@ -1,0 +1,21 @@
+name: Build Magisk Module
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Package module
+        run: |
+          cd magisk_module
+          zip -r ../8d-pirate-magisk.zip * .*
+          cd ..
+      - name: Upload Magisk module
+        uses: actions/upload-artifact@v3
+        with:
+          name: magisk-module
+          path: 8d-pirate-magisk.zip
